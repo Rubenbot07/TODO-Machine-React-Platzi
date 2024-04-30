@@ -1,0 +1,16 @@
+#input {
+    grid-column: 1/-1;
+    width: 80%;
+    max-width: 40rem;
+    min-width: 20rem;
+    height: 4rem;
+    font-size: 1.8rem;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(228, 228, 228, 0.552);
+    color: rgb(109, 26, 109);
+}
+#input:focus {
+    outline: outset rgb(109, 26, 109);
+}

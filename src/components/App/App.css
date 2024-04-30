@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Monserrat', Arial, Helvetica, sans-serif;
+}
+html {
+    font-size: 62.5%;
+}
+#root {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-content: center;
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,226,122,1) 0%, rgba(149,134,218,1) 99%);
+    background: -webkit-linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,226,122,1) 0%, rgba(149,134,218,1) 99%);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,226,122,1) 0%, rgba(149,134,218,1) 99%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#9586da",GradientType=1);
+    height: 100vh;
+    padding: 2rem;
+    gap: 2.4rem;
+}

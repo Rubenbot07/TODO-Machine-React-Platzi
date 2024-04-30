@@ -1,0 +1,13 @@
+.task-item .Icon {
+    cursor: pointer;
+}
+.task-item .Icon-svg {
+    width: 40px;
+    height: 40px;
+}
+.Icon-container-delete:hover .Icon-svg {
+    fill: red
+}
+.Icon-container-check:hover .Icon-svg {
+    fill: green;
+}

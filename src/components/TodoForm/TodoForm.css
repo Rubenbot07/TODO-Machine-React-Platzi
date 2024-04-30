@@ -1,0 +1,55 @@
+form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+    width: 80vw;
+    max-width: 400px;
+    height: auto;
+    background: linear-gradient(100deg, rgba(255,255,255,1) 0%, rgba(255,226,122,1) 0%, rgba(149,134,218,1) 99%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#9586da",GradientType=1);
+    padding: 16px;
+    color: rgb(109, 26, 109);
+    font-weight: bolder;
+    border: 2px solid rgb(109, 26, 109);
+    border-radius: 12px;
+}
+
+textarea {
+    background-color: #fdfaff;
+    text-align: center;
+    width: 90%;
+    height: 60px;
+    padding: 16px;
+    color: rgb(109, 26, 109);
+    font-size: 1.8rem;
+    border: 1px solid rgb(109, 26, 109);
+    border-radius: 12px;
+    outline-color: rgb(109, 26, 109);
+    resize: none;
+}
+.TodoForm-buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.TodoForm-button {
+    width: 40%;
+    height: 32px;
+    border: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.TodoForm-button--cancel { 
+    background-color: transparent;
+    color: rgb(109, 26, 109)
+}
+
+.TodoForm-button--add {
+    background-color: rgb(109, 26, 109);
+    border-radius: 8px;
+    color: #fdfaff;
+}

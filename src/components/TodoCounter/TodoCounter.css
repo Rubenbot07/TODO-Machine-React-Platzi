@@ -1,0 +1,7 @@
+.counterTitle {
+    font-size: 2.6rem;
+    text-align: center;
+    grid-column: 1/-1;
+    color: rgb(109, 26, 109);
+    min-height: 68px;
+}
