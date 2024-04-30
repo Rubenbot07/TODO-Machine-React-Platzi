@@ -8,7 +8,7 @@ import { EmptyTodos } from '../EmptyTodos'
 import { CreateTodoButton } from '../CreateTodoButton'
 import { Modal } from '../Modal'
 import { TodoForm } from '../TodoForm'
-import { TodoContext } from '../../TodoContext'
+import { TodoContext } from '../TodoContext'
 export function AppUI () {
   return (
     <>

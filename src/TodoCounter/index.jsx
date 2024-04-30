@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { TodoContext } from '../../TodoContext'
+import { TodoContext } from '../TodoContext'
 import './TodoCounter.css'
 export function TodoCounter () {
   const {
