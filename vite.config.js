@@ -8,5 +8,11 @@ export default defineConfig({
     watch: {
       usePolling: true
     }
-  }
+  },
+  build: {
+    minify: true,
+    outDir: 'dist'
+  },
+  base: 'https://Rubenbot07.github.io/TODO-Machine-React-Platzi'
+
 })
