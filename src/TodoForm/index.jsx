@@ -29,7 +29,6 @@ export function TodoForm () {
       <label>Write a new TODO!</label>
       <textarea
         placeholder='Write here!'
-        value={newTodoValue}
         onChange={onChange}
       />
       <div className='TodoForm-buttonContainer'>
