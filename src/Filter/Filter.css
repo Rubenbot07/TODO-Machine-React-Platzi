@@ -1,0 +1,36 @@
+.filters {
+    display: flex;
+    grid-column: 1 / -1;
+}
+.filters span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #fdfaff;
+    background-color: rgb(109, 26, 109);
+    height: 32px;
+    border-end-start-radius: 8px;
+    border-start-start-radius: 8px;
+    font-weight: bold;
+    padding-inline-start: 4px;
+    padding-inline-end: 4px;
+}
+.filters select{
+    height: 32px;
+    background-color: #fdfaff;
+    border-start-end-radius: 8px;
+    border-end-end-radius: 8px;
+    outline-color: rgb(109, 26, 109);
+    color: rgb(109, 26, 109);
+    border: 2px solid rgb(109, 26, 109);
+    margin-block-start: 0px;
+    cursor: pointer;
+  }
+  .filters select:focus option:checked {
+    background-color: rgb(109, 26, 109);
+    color: #fdfaff; /* Cambia el color del texto si es necesario */
+  }
+  .filters select:focus option {
+    border-radius: 8px;
+  }

@@ -1,11 +1,13 @@
 import { useState, useContext } from 'react'
 import { TodoContext } from '../TodoContext'
+import { TodoCategories } from '../TodoCategories'
 import './TodoForm.css'
 
 export function TodoForm () {
   const {
     addTodo,
-    setOpenModal
+    setOpenModal,
+    setCategory
   } = useContext(TodoContext)
   const [newTodoValue, setNewTodoValue] = useState('')
 
@@ -15,6 +17,7 @@ export function TodoForm () {
       addTodo(newTodoValue)
     }
     setOpenModal(false)
+    setCategory('Others')
   }
 
   const onCancel = () => {
@@ -31,6 +34,7 @@ export function TodoForm () {
         placeholder='Write here!'
         onChange={onChange}
       />
+      <TodoCategories />
       <div className='TodoForm-buttonContainer'>
         <button
           className='TodoForm-button TodoForm-button--cancel'

@@ -1,0 +1,29 @@
+.categories-span {
+  display: inline-block;
+  font-size: 1.8rem;
+  color: #fdfaff;
+  background-color: rgb(109, 26, 109);
+  height: 32px;
+  padding: 4px;
+  border-end-start-radius: 8px;
+  border-start-start-radius: 8px;
+}
+
+.categories-container select{
+  height: 32px;
+  background-color: #fdfaff;
+  border-start-end-radius: 8px;
+  border-end-end-radius: 8px;
+  outline-color: rgb(109, 26, 109);
+  color: rgb(109, 26, 109);
+  border: 2px solid rgb(109, 26, 109);
+  margin-block-start: 2px;
+  cursor: pointer;
+}
+.categories-container select:focus option:checked {
+  background-color: rgb(109, 26, 109);
+  color: #fdfaff; /* Cambia el color del texto si es necesario */
+}
+.categories-container select:focus option {
+  border-radius: 8px;
+}

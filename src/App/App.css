@@ -16,7 +16,8 @@ html {
     background: -webkit-linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,226,122,1) 0%, rgba(149,134,218,1) 99%);
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,226,122,1) 0%, rgba(149,134,218,1) 99%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#9586da",GradientType=1);
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
     padding: 2rem;
     gap: 2.4rem;
 }
