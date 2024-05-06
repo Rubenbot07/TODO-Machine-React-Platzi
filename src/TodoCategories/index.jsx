@@ -16,7 +16,7 @@ export function TodoCategories () {
     <div className='categories-container'>
       <span className='categories-span'>Categories</span>
       <select
-        onClick={(event) => changeCategory(event.target.value)}
+        onChange={(event) => changeCategory(event.target.value)}
       >
         {listItems.map((item, index) => (
           <option
