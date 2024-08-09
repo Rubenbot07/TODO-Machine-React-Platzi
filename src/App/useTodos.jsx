@@ -28,19 +28,20 @@ export function useTodos () {
       {
         text,
         completed: false,
-        categories: category
+        categories: category,
+        id: searchedTodos.length
       }
     )
     saveTodos(newTodos)
   }
 
-  const completeTodo = (index) => {
+  const completeTodo = (id) => {
     const newTodos = [...todos]
-    if (newTodos[index].completed === true) {
-      newTodos[index].completed = false
+    if (newTodos[id].completed === true) {
+      newTodos[id].completed = false
       saveTodos(newTodos)
     } else {
-      newTodos[index].completed = true
+      newTodos[id].completed = true
       saveTodos(newTodos)
     }
   }

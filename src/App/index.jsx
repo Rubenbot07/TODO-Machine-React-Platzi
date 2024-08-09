@@ -11,7 +11,7 @@ import { EmptyTodos } from '../EmptyTodos'
 import { CreateTodoButton } from '../CreateTodoButton'
 import { Modal } from '../Modal'
 import { TodoForm } from '../TodoForm'
-import { TodoFiltered } from '../TodoFilter'
+// import { TodoFiltered } from '../TodoFilter'
 import { Filter } from '../Filter'
 
 function App () {
@@ -47,7 +47,28 @@ function App () {
         categoryFilter={categoryFilter}
         setCategoryFilter={setCategoryFilter}
       />
-      <TodoList>
+      <TodoList
+        completeTodo={completeTodo}
+        deleteTodo={deleteTodo}
+        categoryFilter={categoryFilter}
+        error={error}
+        onError={() => <TodosError />}
+        loading={loading}
+        onLoading={() => <TodosLoading />}
+        searchedTodos={searchedTodos}
+        onEmptyTodos={() => <EmptyTodos />}
+        render={(item) => (
+          <TodoItem
+            key={item.id}
+            task={item.text}
+            completed={item.completed}
+            category={item.categories}
+            onComplete={() => completeTodo(item.id)}
+            onDelete={() => deleteTodo(item.text)}
+          />
+        )}
+      />
+      {/* <TodoList>
         {loading && <TodosLoading />}
         {error && <TodosError />}
         {(!loading && searchedTodos.length === 0 && !error) && <EmptyTodos />}
@@ -72,7 +93,7 @@ function App () {
               />
             )
           })}
-      </TodoList>
+      </TodoList> */}
       <CreateTodoButton
         setOpenModal={setOpenModal}
         openModal={openModal}
