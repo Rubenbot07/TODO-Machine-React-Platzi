@@ -1,11 +1,5 @@
-import { useContext } from 'react'
 import './CreateTodoButton.css'
-import { TodoContext } from '../TodoContext'
-export function CreateTodoButton () {
-  const {
-    openModal,
-    setOpenModal
-  } = useContext(TodoContext)
+export function CreateTodoButton ({ setOpenModal, openModal }) {
   return (
     <button
       id='create-task-btn'

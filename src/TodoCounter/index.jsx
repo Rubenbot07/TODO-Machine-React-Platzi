@@ -1,11 +1,5 @@
-import { useContext } from 'react'
-import { TodoContext } from '../TodoContext'
 import './TodoCounter.css'
-export function TodoCounter () {
-  const {
-    totalTodos,
-    completedTodos
-  } = useContext(TodoContext)
+export function TodoCounter ({ totalTodos, completedTodos }) {
   return (
     totalTodos === completedTodos
       ? (totalTodos > 1)

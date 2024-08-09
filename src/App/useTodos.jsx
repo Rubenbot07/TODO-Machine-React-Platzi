@@ -1,7 +1,7 @@
-import { createContext, useState } from 'react'
+import { useState } from 'react'
 import { useLocalStorage } from '../hooks/useLocalStorage'
-const TodoContext = createContext()
-function TodoProvider ({ children }) {
+
+export function useTodos () {
   const {
     item: todos,
     saveItem: saveTodos,
@@ -52,7 +52,7 @@ function TodoProvider ({ children }) {
     saveTodos(newTodos)
   }
   return (
-    <TodoContext.Provider value={{
+    {
       loading,
       error,
       completedTodos,
@@ -69,11 +69,6 @@ function TodoProvider ({ children }) {
       setCategory,
       categoryFilter,
       setCategoryFilter
-    }}
-    >
-      {children}
-    </TodoContext.Provider>
+    }
   )
 }
-
-export { TodoContext, TodoProvider }

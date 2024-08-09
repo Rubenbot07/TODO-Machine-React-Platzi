@@ -1,12 +1,6 @@
-import { useContext } from 'react'
-import { TodoContext } from '../TodoContext'
 import './Filter.css'
 
-export function Filter () {
-  const {
-    categoryFilter,
-    setCategoryFilter
-  } = useContext(TodoContext)
+export function Filter ({ categoryFilter, setCategoryFilter }) {
   const menuFilters = ['All', 'Home', 'Study', 'Gym', 'Others']
 
   const changeFilter = (item) => {

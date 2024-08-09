@@ -1,12 +1,6 @@
-import { useContext } from 'react'
 import './TodoCategories.css'
-import { TodoContext } from '../TodoContext'
 
-export function TodoCategories () {
-  const {
-    category,
-    setCategory
-  } = useContext(TodoContext)
+export function TodoCategories ({ category, setCategory }) {
   const listItems = ['Others', 'Home', 'Study', 'Gym']
   const changeCategory = (item) => {
     setCategory(item)

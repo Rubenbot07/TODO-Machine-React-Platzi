@@ -1,14 +1,6 @@
-import { useContext, useState } from 'react'
 import { TodoItem } from '../TodoItem'
-import { TodoContext } from '../TodoContext'
 
-export function TodoFiltered () {
-  const {
-    completeTodo,
-    deleteTodo,
-    searchedTodos,
-    categoryFilter
-  } = useContext(TodoContext)
+export function TodoFiltered ({ completeTodo, deleteTodo, searchedTodos, categoryFilter }) {
   const filtered = searchedTodos.filter((item) => item.categories === categoryFilter)
   return (
     <>
