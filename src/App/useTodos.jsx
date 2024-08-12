@@ -29,19 +29,21 @@ export function useTodos () {
         text,
         completed: false,
         categories: category,
-        id: searchedTodos.length
+        id: (Math.floor(Math.random() * 10 + 1)) * text.length
       }
     )
+    console.log(newTodos)
     saveTodos(newTodos)
   }
 
   const completeTodo = (id) => {
     const newTodos = [...todos]
-    if (newTodos[id].completed === true) {
-      newTodos[id].completed = false
+    const itemIndex = newTodos.findIndex(item => item.id === id)
+    if (newTodos[itemIndex].completed === true) {
+      newTodos[itemIndex].completed = false
       saveTodos(newTodos)
     } else {
-      newTodos[id].completed = true
+      newTodos[itemIndex].completed = true
       saveTodos(newTodos)
     }
   }

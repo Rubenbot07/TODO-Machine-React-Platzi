@@ -1,5 +1,7 @@
 .TodoList-container {
-    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
     grid-column: 1/-1;
     width: 90%;
     max-width: 60rem;
@@ -9,7 +11,9 @@
 .tasks-container {
     display: flex;
     flex-direction: column;
+    padding: 0;
     gap: 1.2rem;
+    width: 100%;
 }
 
 .task-item {
