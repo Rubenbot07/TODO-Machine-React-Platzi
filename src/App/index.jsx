@@ -8,6 +8,7 @@ import { TodoItem } from '../TodoItem'
 import { TodosLoading } from '../TodosLoading'
 import { TodosError } from '../TodosError'
 import { EmptyTodos } from '../EmptyTodos'
+import { EmptyResult } from '../EmptyResult'
 import { CreateTodoButton } from '../CreateTodoButton'
 import { Modal } from '../Modal'
 import { TodoForm } from '../TodoForm'
@@ -50,11 +51,13 @@ function App () {
       <TodoList
         categoryFilter={categoryFilter}
         error={error}
-        onError={() => <TodosError />}
         loading={loading}
-        onLoading={() => <TodosLoading />}
+        totalTodos={totalTodos}
         searchedTodos={searchedTodos}
+        onError={() => <TodosError />}
+        onLoading={() => <TodosLoading />}
         onEmptyTodos={() => <EmptyTodos />}
+        onEmptyResult={() => <EmptyResult searchedValue={searchValue} />}
         filters={() =>
           <TodoFiltered
             completeTodo={completeTodo}
@@ -62,7 +65,18 @@ function App () {
             searchedTodos={searchedTodos}
             categoryFilter={categoryFilter}
           />}
-        render={(item) => (
+        // render={item => (
+        //   <TodoItem
+        //     key={item.id}
+        //     task={item.text}
+        //     completed={item.completed}
+        //     category={item.categories}
+        //     onComplete={() => completeTodo(item.id)}
+        //     onDelete={() => deleteTodo(item.text)}
+        //   />
+        // )}
+      >
+        {item => (
           <TodoItem
             key={item.id}
             task={item.text}
@@ -72,7 +86,7 @@ function App () {
             onDelete={() => deleteTodo(item.text)}
           />
         )}
-      />
+      </TodoList>
       {/* <TodoList>
         {loading && <TodosLoading />}
         {error && <TodosError />}
