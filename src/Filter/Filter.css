@@ -34,3 +34,6 @@
   .filters select:focus option {
     border-radius: 8px;
   }
+  .filters--loading {
+    opacity: 25%;
+  }

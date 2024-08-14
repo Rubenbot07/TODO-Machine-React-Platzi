@@ -1,6 +1,5 @@
 #input {
-    grid-column: 1/-1;
-    width: 80%;
+    width: 100%;
     max-width: 40rem;
     min-width: 20rem;
     height: 4rem;
@@ -11,6 +10,11 @@
     background-color: rgba(228, 228, 228, 0.552);
     color: rgb(109, 26, 109);
 }
+
 #input:focus {
     outline: outset rgb(109, 26, 109);
+}
+
+#input:disabled {
+    opacity: 60%;
 }

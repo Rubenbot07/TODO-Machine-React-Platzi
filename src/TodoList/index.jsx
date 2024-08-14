@@ -10,9 +10,6 @@ export function TodoList (props) {
       {(!!props.totalTodos && !props.searchedTodos.length) && props.onEmptyResult()}
       {(props.categoryFilter !== 'All') && props.filters()}
       {props.categoryFilter === 'All' && props.searchedTodos.map(renderFunc)}
-      <ul className='tasks-container'>
-        {props.children}
-      </ul>
     </section>
   )
 }

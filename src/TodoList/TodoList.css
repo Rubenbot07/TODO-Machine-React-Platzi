@@ -8,15 +8,15 @@
     min-width: 20rem;
     min-height: 250px;
 }
-.tasks-container {
+/* .tasks-container {
     display: flex;
     flex-direction: column;
     padding: 0;
     gap: 1.2rem;
     width: 100%;
-}
+} */
 
-.task-item {
+/* .task-item {
     font-size: 2rem;
     display: flex;
     align-items: center;
@@ -28,10 +28,10 @@
     background-color: rgba(228, 228, 228, 0.552);
     color: rgb(109, 26, 109);
     gap: 12px;
-}
-.TodoItem-p {
+} */
+/* .TodoItem-p {
     background-color: transparent;
-}
-.TodoItem-p--completed {
+} */
+/* .TodoItem-p--completed {
     text-decoration: line-through;
-}
+} */

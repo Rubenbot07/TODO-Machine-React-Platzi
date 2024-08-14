@@ -1,6 +1,7 @@
 import './App.css'
 import { React } from 'react'
 import { useTodos } from './useTodos'
+import { TodoHeader } from '../TodoHeader'
 import { TodoCounter } from '../TodoCounter'
 import { TodoSearch } from '../TodoSearch'
 import { TodoList } from '../TodoList'
@@ -36,18 +37,20 @@ function App () {
   } = useTodos()
   return (
     <>
-      <TodoCounter
-        totalTodos={totalTodos}
-        completedTodos={completedTodos}
-      />
-      <TodoSearch
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-      />
-      <Filter
-        categoryFilter={categoryFilter}
-        setCategoryFilter={setCategoryFilter}
-      />
+      <TodoHeader loading={loading}>
+        <TodoCounter
+          totalTodos={totalTodos}
+          completedTodos={completedTodos}
+        />
+        <TodoSearch
+          searchValue={searchValue}
+          setSearchValue={setSearchValue}
+        />
+        <Filter
+          categoryFilter={categoryFilter}
+          setCategoryFilter={setCategoryFilter}
+        />
+      </TodoHeader>
       <TodoList
         categoryFilter={categoryFilter}
         error={error}

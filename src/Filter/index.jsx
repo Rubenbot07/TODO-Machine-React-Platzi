@@ -1,6 +1,6 @@
 import './Filter.css'
 
-export function Filter ({ categoryFilter, setCategoryFilter }) {
+export function Filter ({ categoryFilter, setCategoryFilter, loading }) {
   const menuFilters = ['All', 'Home', 'Study', 'Gym', 'Others']
 
   const changeFilter = (item) => {
@@ -8,7 +8,7 @@ export function Filter ({ categoryFilter, setCategoryFilter }) {
     setCategoryFilter(item)
   }
   return (
-    <div className='filters'>
+    <div className={`filters ${!!loading && 'filters--loading'}`}>
       <span>Filters</span>
       <select
         className='filters-container'
