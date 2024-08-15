@@ -9,7 +9,7 @@ export function TodoList (props) {
       {(!props.loading && !props.totalTodos) && props.onEmptyTodos()}
       {(!!props.totalTodos && !props.searchedTodos.length) && props.onEmptyResult()}
       {(props.categoryFilter !== 'All') && props.filters()}
-      {props.categoryFilter === 'All' && props.searchedTodos.map(renderFunc)}
+      {!props.loading && props.categoryFilter === 'All' && props.searchedTodos.map(renderFunc)}
     </section>
   )
 }

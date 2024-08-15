@@ -4,6 +4,7 @@ export function useLocalStorage (itemName, initialValue) {
   const [item, setItem] = useState(initialValue)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
+  const [synchronizeItem, setSynchronizeItem] = useState(true)
 
   useEffect(() => {
     setTimeout(() => {
@@ -19,17 +20,23 @@ export function useLocalStorage (itemName, initialValue) {
           parsedItem = initialValue
           setLoading(false)
         }
+        setSynchronizeItem(true)
       } catch (error) {
         setLoading(false)
         setError(true)
       }
     }, 3000)
-  }, [])
+  }, [synchronizeItem])
 
   const saveItem = (newItem) => {
     localStorage.setItem(itemName, JSON.stringify(newItem))
     setItem(newItem)
   }
 
-  return { item, saveItem, loading, error }
+  const synchronize = () => {
+    setLoading(true)
+    setSynchronizeItem(false)
+  }
+
+  return { item, saveItem, loading, error, synchronize }
 }

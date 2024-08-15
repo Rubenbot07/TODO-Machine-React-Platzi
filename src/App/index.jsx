@@ -15,6 +15,7 @@ import { Modal } from '../Modal'
 import { TodoForm } from '../TodoForm'
 import { TodoFiltered } from '../TodoFilter'
 import { Filter } from '../Filter'
+import { ChangeAlertWithStorageListener } from '../ChangeAlert'
 
 function App () {
   const {
@@ -33,7 +34,8 @@ function App () {
     totalTodos,
     completedTodos,
     searchValue,
-    setSearchValue
+    setSearchValue,
+    synchronizeTodos
   } = useTodos()
   return (
     <>
@@ -130,6 +132,9 @@ function App () {
           />
         </Modal>
       )}
+      <ChangeAlertWithStorageListener
+        synchronize={synchronizeTodos}
+      />
     </>
   )
 }

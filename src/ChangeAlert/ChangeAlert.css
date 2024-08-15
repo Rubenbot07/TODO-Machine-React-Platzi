@@ -1,0 +1,24 @@
+.ChangeAlert-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    width: 80%;
+    max-width: 450px;
+    background: linear-gradient(100deg, rgba(255,255,255,1) 0%, rgba(255,226,122,1) 0%, rgba(149,134,218,1) 99%);
+    color: rgb(109, 26, 109);
+    font-weight: bolder;
+    border: 2px solid rgb(109, 26, 109);
+    border-radius: 12px;
+}
+
+.ChangeAlert-container button {
+    width: 40%;
+    height: 30px;
+    background-color: rgb(109, 26, 109);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    border-radius: 12px;
+}
