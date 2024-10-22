@@ -9,8 +9,8 @@ export function useLocalStorage (itemName, initialValue) {
     dispatch({ type: 'error', payload: error })
   }
 
-  const OnSuccess = () => {
-    dispatch({ type: 'OnSuccess' })
+  const onSuccess = () => {
+    dispatch({ type: 'onSuccess' })
   }
 
   const onSetItem = (item) => {
@@ -29,7 +29,7 @@ export function useLocalStorage (itemName, initialValue) {
           localStorage.setItem('TODOS_V1', JSON.stringify(initialValue))
           parsedItem = initialValue
         }
-        OnSuccess()
+        onSuccess()
       } catch (error) {
         onError(error)
       }
@@ -66,7 +66,7 @@ function reducer (state, action) {
         ...state,
         item: action.payload
       }
-    case 'OnSuccess':
+    case 'onSuccess':
       return {
         ...state,
         loading: false,
