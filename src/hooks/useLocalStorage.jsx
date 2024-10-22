@@ -17,6 +17,9 @@ export function useLocalStorage (itemName, initialValue) {
     dispatch({ type: 'save', payload: item })
   }
 
+  const onSynchronize = () => {
+    dispatch({ type: 'synchronize' })
+  }
   useEffect(() => {
     setTimeout(() => {
       try {
@@ -42,7 +45,7 @@ export function useLocalStorage (itemName, initialValue) {
   }
 
   const synchronize = () => {
-    dispatch({ type: 'synchronize' })
+    onSynchronize()
   }
 
   return { item, saveItem, loading, error, synchronize }
