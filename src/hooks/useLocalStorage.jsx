@@ -1,10 +1,21 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useReducer } from 'react'
 
 export function useLocalStorage (itemName, initialValue) {
-  const [item, setItem] = useState(initialValue)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(false)
-  const [synchronizeItem, setSynchronizeItem] = useState(true)
+  const [state, dispatch] = useReducer(reducer, initialState({ initialValue }))
+
+  const { item, loading, error, synchronizeItem } = state
+
+  const onError = (error) => {
+    dispatch({ type: 'error', payload: error })
+  }
+
+  const OnSuccess = () => {
+    dispatch({ type: 'OnSuccess' })
+  }
+
+  const onSetItem = (item) => {
+    dispatch({ type: 'save', payload: item })
+  }
 
   useEffect(() => {
     setTimeout(() => {
@@ -13,30 +24,68 @@ export function useLocalStorage (itemName, initialValue) {
         let parsedItem
         if (localStorageItem) {
           parsedItem = JSON.parse(localStorageItem)
-          setItem(parsedItem)
-          setLoading(false)
+          onSetItem(parsedItem)
         } else {
           localStorage.setItem('TODOS_V1', JSON.stringify(initialValue))
           parsedItem = initialValue
-          setLoading(false)
         }
-        setSynchronizeItem(true)
+        OnSuccess()
       } catch (error) {
-        setLoading(false)
-        setError(true)
+        onError(error)
       }
     }, 3000)
   }, [synchronizeItem])
 
   const saveItem = (newItem) => {
     localStorage.setItem(itemName, JSON.stringify(newItem))
-    setItem(newItem)
+    onSetItem(newItem)
   }
 
   const synchronize = () => {
-    setLoading(true)
-    setSynchronizeItem(false)
+    dispatch({ type: 'synchronize' })
   }
 
   return { item, saveItem, loading, error, synchronize }
+}
+
+const initialState = ({ initialValue }) => {
+  return (
+    {
+      item: initialValue,
+      loading: true,
+      error: false,
+      synchronizeItem: true
+    }
+  )
+}
+
+function reducer (state, action) {
+  switch (action.type) {
+    case 'save':
+      return {
+        ...state,
+        item: action.payload
+      }
+    case 'OnSuccess':
+      return {
+        ...state,
+        loading: false,
+        synchronizeItem: true
+      }
+
+    case 'synchronize':
+      return {
+        ...state,
+        synchronizeItem: false,
+        loading: true
+      }
+    case 'error':
+      return {
+        ...state,
+        error: true,
+        loading: false
+      }
+    default:
+      return state
+  }
 }
